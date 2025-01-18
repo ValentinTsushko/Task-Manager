@@ -1,0 +1,16 @@
+﻿@model InputModel
+@{
+    ViewData["Title"] = "Calculate";
+}
+
+<h1>Калькулятор</h1>
+
+<form asp-action="Calculate" method="post">
+    <div class="form-group">
+        <label for="expression">Введите выражение (например, 5 + 4):</label>
+        <input type="text" id="expression" name="UserInput" class="form-control" value="@Model?.UserInput" />
+
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Вычислить</button>
+</form>
+
