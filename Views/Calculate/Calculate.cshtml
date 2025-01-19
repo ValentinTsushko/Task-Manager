@@ -5,12 +5,16 @@
 
 <h1>Калькулятор</h1>
 
-<form asp-action="Calculate" method="post">
+<!-- Оно обращаеться к методу Calculate а не к контроллеру -->
+<!-- formaction="/Calculate/Calculate" /Calculate/Calculate - название контроллера а потом метода -->
+<form asp-action="Calculate" id="form" method="post">  
     <div class="form-group">
         <label for="expression">Введите выражение (например, 5 + 4):</label>
         <input type="text" id="expression" name="UserInput" class="form-control" value="@Model?.UserInput" />
-
     </div>
-    <button type="submit" class="btn btn-primary mt-2">Вычислить</button>
+    <div>
+        <button type="submit" class="btn btn-primary mt-2">Вычислить</button>  <!--  formaction="/Calculate/Calculate" - сюда это не обязательно -->
+        <button type="submit" class="btn btn-primary mt-2" formaction="/Calculate/FieldCLear">Очистить поле</button>
+    </div>
 </form>
 
